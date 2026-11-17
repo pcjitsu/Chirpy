@@ -16,6 +16,7 @@ func main() {
 
 	//for any path strating iwth "/" serve files from the directory
 	//request for /index.html returns ./index.htnml
+	// also now the fileserver handler is pointed at root so follows standard pathing in the url too
 	mux.Handle("/", http.FileServer(http.Dir(".")))
 	//Starts the server
 	server.ListenAndServe()
